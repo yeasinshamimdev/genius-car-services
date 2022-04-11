@@ -9,7 +9,7 @@ const Service = ({ service }) => {
                 <img src={img} alt="Car services" />
             </div>
             <div className='service-info'>
-                <h2>{name}</h2>
+                <h2 className='service-title'>{name}</h2>
                 <p>Price: {price}</p>
                 <p><small>{description}</small></p>
                 <button>Book: {name}</button>

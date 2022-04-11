@@ -13,6 +13,11 @@
     padding-bottom: 5px;
 }
 
+.service-title{
+    font-size: 26px;
+    margin-top: 10px;
+}
+
 .service-info button{
     background-color: rgb(162, 76, 243);
     padding: 8px 12px;
