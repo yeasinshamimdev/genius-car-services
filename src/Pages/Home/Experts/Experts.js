@@ -17,7 +17,7 @@ const Experts = () => {
         { id: 6, name: 'Shakib Khan', img: expert6 },
     ]
     return (
-        <div className='container mb-4'>
+        <div id="experts" className='container mb-4'>
             <h1 className='text-primary text-center my-4'>Our Experts</h1>
             <div className='row'>
                 {

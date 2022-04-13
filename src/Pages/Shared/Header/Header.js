@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.png';
 import './Header.css';
@@ -7,18 +7,31 @@ import './Header.css';
 const Header = () => {
     return (
         <>
-            <Navbar bg="primary" variant="dark">
+            <Navbar collapseOnSelect expand="lg" sticky='top' bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">
-                        <img src={logo} height='40' alt="Logo" />
+                    <Navbar.Brand as={Link} to="/">
+                        <img height={50} src={logo} alt="" />
                     </Navbar.Brand>
-                    <div className='navbar-nav'>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Link to='/' >Home</Link>
-                            <Link to="/about">About</Link>
-                            <Link to="/login">Login</Link>
+                            <Nav.Link href="#services">Services</Nav.Link>
+                            <Nav.Link href="#experts">Experts</Nav.Link>
+                            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            </NavDropdown>
                         </Nav>
-                    </div>
+                        <Nav>
+                            <Nav.Link as={Link} to="about">About</Nav.Link>
+                            <Nav.Link as={Link} to="login">
+                                Login
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </>
