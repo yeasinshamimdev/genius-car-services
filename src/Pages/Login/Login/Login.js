@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    const navigate = useNavigate();
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -13,6 +14,9 @@ const Login = () => {
         console.log(email, password);
     }
 
+    const navigateRegister = event => {
+        navigate('/register');
+    }
 
     return (
         <div className='container w-50 mx-auto mb-3 mt-2'>
@@ -37,7 +41,7 @@ const Login = () => {
                     Submit
                 </Button>
             </Form>
-            <p>New to Genius Car? <Link to='/register' className='text-danger text-decoration-none pe-auto' >Please Register</Link></p>
+            <p>New to Genius Car? <Link to='/register' className='text-danger text-decoration-none pe-auto' onClick={navigateRegister}>Please Register</Link></p>
         </div>
     );
 };
