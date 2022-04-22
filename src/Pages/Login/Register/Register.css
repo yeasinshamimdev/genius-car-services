@@ -2,7 +2,7 @@
     width: 50%;
     margin: 0 auto;
 }
-.register-form input{
+.register-form input:not([type=checkbox]){
     display: block;
     width: 100%;
     height: 40px;
@@ -14,6 +14,7 @@
 .register-form input:nth-last-child(1){
     width: 25%;
     margin: auto;
+    margin-top: 15px;
     margin-bottom: 10px;
     cursor: pointer;
     border: none;
@@ -22,9 +23,11 @@
     color:white;
     border-radius: 5px;
 }
+
 .register-form input:nth-last-child(1):hover{
     background-color:  rgb(14, 211, 14);
 }
+
 .register-form input:focus{
     outline: none;
 }
